@@ -1,6 +1,7 @@
 ---
 import Navbar from "../components/reusable/navbar.astro";
 import Analytics from "@vercel/analytics/astro";
+import BlobBG from "../components/reusable/blobBG.astro";
 //import { themeChange } from "theme-change";
 ---
 
@@ -58,6 +59,7 @@ import Analytics from "@vercel/analytics/astro";
   </head>
   <body class="pt-5 md:pt-[10em]">
     <Analytics />
+    <BlobBG />
     <Navbar />
     <slot />
   </body>
