@@ -1,6 +1,7 @@
 ---
 import Navbar from "../components/reusable/navbar.astro";
 import Analytics from "@vercel/analytics/astro";
+//import { themeChange } from "theme-change";
 ---
 
 <!doctype html>
@@ -11,6 +12,49 @@ import Analytics from "@vercel/analytics/astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
+
+    <script is:inline>
+      // Prevent FART (Flash of inAccurate coloR Theme)
+      const theme = localStorage.getItem("theme") ?? "business";
+      document.documentElement.setAttribute("data-theme", theme);
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const desktopCheckbox = document.getElementById(
+          "theme-checkbox"
+        ) as HTMLInputElement;
+        const mobileCheckbox = document.getElementById(
+          "theme-checkbox-mobile"
+        ) as HTMLInputElement;
+
+        function updateCheckboxes(theme: string) {
+          const isLight = theme === "light";
+          if (desktopCheckbox) desktopCheckbox.checked = isLight;
+          if (mobileCheckbox) mobileCheckbox.checked = isLight;
+          document.documentElement.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
+        }
+
+        // Set initial states
+        const savedTheme = localStorage.getItem("theme") ?? "business";
+        updateCheckboxes(savedTheme);
+
+        // Add event listeners for both checkboxes
+        desktopCheckbox?.addEventListener("change", () => {
+          const theme = desktopCheckbox.checked ? "light" : "business";
+          updateCheckboxes(theme);
+        });
+
+        mobileCheckbox?.addEventListener("change", () => {
+          const theme = mobileCheckbox.checked ? "light" : "business";
+          updateCheckboxes(theme);
+        });
+      });
+    </script>
+    <meta charset="utf-8" />
+    <title>My Cool Astro Layout Wraping All My Pages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body class="pt-5 md:pt-[10em]">
     <Analytics />
