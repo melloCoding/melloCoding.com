@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/reusable/navbar.astro";
+import Analytics from "@vercel/analytics/astro";
 ---
 
 <!doctype html>
@@ -12,6 +13,7 @@ import Navbar from "../components/reusable/navbar.astro";
     <title>Astro Basics</title>
   </head>
   <body class="pt-5 md:pt-[10em]">
+    <Analytics />
     <Navbar />
     <slot />
   </body>
