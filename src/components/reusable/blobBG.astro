@@ -5,28 +5,8 @@ import blob3 from "../../assets/blobs/business/blob3.svg";
 import blob4 from "../../assets/blobs/business/blob4.svg";
 import blob5 from "../../assets/blobs/business/blob5.svg";
 
-const rand = Math.floor(Math.random() * 5) + 1;
-
-switch (rand) {
-  default:
-    var background = blob1;
-    break;
-  case 1:
-    var background = blob1;
-    break;
-  case 2:
-    var background = blob2;
-    break;
-  case 3:
-    var background = blob3;
-    break;
-  case 4:
-    var background = blob4;
-    break;
-  case 5:
-    var background = blob5;
-    break;
-}
+let randomArr = [blob1, blob2, blob3, blob4, blob5];
+let background = randomArr[Math.floor(Math.random() * 5)];
 ---
 
 <img
