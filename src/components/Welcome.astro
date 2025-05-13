@@ -4,17 +4,36 @@ import Logo from "../assets/logo.jpeg";
 import "../styles/global.css";
 ---
 
-<div class="hero min-h-screen">
-  <div class="hero-content flex-col lg:flex-row">
-    <img src={Logo.src} class="max-w-sm rounded-lg shadow-2xl" />
-    <div>
-      <h1 class="text-5xl font-bold">Box Office News!</h1>
-      <p class="py-6">
-        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-        excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a
-        id nisi.
-      </p>
-      <button class="btn btn-primary">Get Started</button>
+<head>
+  <meta
+    name="description"
+    content="Home page of Jeffrey Mello's personal website"
+  />
+</head>
+
+<div class="h-[75%] grid-cols-2 gap-3">
+  <div class="hero">
+    <div class="hero-content flex-col lg:flex-row">
+      <img
+        src={Logo.src}
+        alt="PErsonal logo looks like a fish swimming in a galaxy"
+        class="max-w-sm rounded-2xl shadow-2xl"
+      />
+      <div>
+        <h1 class="text-5xl font-bold">melloCoding</h1>
+        <p class="py-6">
+          Beginner Full Stack web developer, game designer, and really bad
+          artist.
+        </p>
+        <button class="btn btn-primary">Get Started</button>
+      </div>
     </div>
   </div>
+
+  <!-- <ul class="menu bg-base-200 rounded-box h-[50%] overflow-y-auto mx-[5%]">
+    <li class="menu-title">Title</li>
+    <li><a>Item 1</a></li>
+    <li><a>Item 2</a></li>
+    <li><a>Item 3</a></li>
+  </ul> -->
 </div>

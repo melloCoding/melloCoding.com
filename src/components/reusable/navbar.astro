@@ -36,14 +36,14 @@
       </svg>
     </label>
   </div>
-  <a href="/gamedev">
+  <!-- <a href="/gamedev">
     <div class="flex-none btn btn-ghost text-lg">Devlog</div>
   </a>
 
   <a href="/robotics">
     <div class="flex-none btn btn-ghost text-lg">Robotics</div>
   </a>
-
+ -->
   <a href="/project">
     <div class="flex-none btn btn-ghost text-lg">Projects</div>
   </a>
@@ -54,7 +54,7 @@
   class="inline-flex md:hidden dock w-[95%] ml-[2.5%] mb-[2.5%] rounded-3xl border-2 border-base-200 shadow-2xl"
 >
   <a href="/">
-    <button>
+    <button aria-label="return to home button">
       <svg
         class="size-[1.2em]"
         xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +87,7 @@
     </button>
   </a>
 
-  <button class="">
+  <button aria-label="Theme Swap Button" class="">
     <label class="swap-rotate swap">
       <!-- this hidden checkbox controls the state -->
       <input
@@ -118,10 +118,10 @@
       </svg>
     </label>
     <!-- <span class="dock-label swap-on">Light</span>
-    <span class="dock-label swap-off">Dark</span> -->
+      <span class="dock-label swap-off">Dark</span> -->
   </button>
 
-  <button>
+  <button aria-label="hamburger menu">
     <!--?xml version="1.0" encoding="utf-8"?-->
 
     <div class="dropdown dropdown-top dropdown-end">
@@ -154,8 +154,8 @@
         tabindex="0"
         class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm text-xl btn-ghost"
       >
-        <li><a href="/devlog">Devlog</a></li>
-        <li><a href="/robotics">Robotics</a></li>
+        <!-- <li><a href="/devlog">Devlog</a></li>
+        <li><a href="/robotics">Robotics</a></li> -->
         <li><a href="/projects">Projects</a></li>
       </ul>
     </div>
