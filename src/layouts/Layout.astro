@@ -17,7 +17,7 @@ import BlobBG from "../components/reusable/blobBG.astro";
 
     <script is:inline>
       // Prevent FART (Flash of inAccurate coloR Theme)
-      export const theme = localStorage.getItem("theme") ?? "business";
+      const theme = localStorage.getItem("theme") ?? "business";
       document.documentElement.setAttribute("data-theme", theme);
     </script>
 
