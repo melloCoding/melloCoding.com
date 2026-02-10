@@ -24,10 +24,10 @@ import BlobBG from "../components/reusable/blobBG.astro";
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const desktopCheckbox = document.getElementById(
-          "theme-checkbox"
+          "theme-checkbox",
         ) as HTMLInputElement;
         const mobileCheckbox = document.getElementById(
-          "theme-checkbox-mobile"
+          "theme-checkbox-mobile",
         ) as HTMLInputElement;
 
         function updateCheckboxes(theme: string) {
@@ -59,8 +59,6 @@ import BlobBG from "../components/reusable/blobBG.astro";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body class="pt-5 md:pt-[10em]">
-    <SpeedInsights />
-    <Analytics />
     <BlobBG />
     <Navbar />
     <slot />
