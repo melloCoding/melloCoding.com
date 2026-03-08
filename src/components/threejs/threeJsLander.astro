@@ -1,6 +1,7 @@
 ---
 import SecondaryTitle from "../../components/reusable/secondaryTitle.astro";
 import Card from "../../components/reusable/card.astro";
+import ThreejsPhoto from "../../assets/threejs.webp";
 ---
 
 <div>
@@ -13,12 +14,43 @@ import Card from "../../components/reusable/card.astro";
   </p>
   <SecondaryTitle title="ThreeJs Projects" />
   <!-- Uses the card component to show all of the available projects -->
-  <div class="flex flex-col columns-4 w-full mx-40">
+  <div
+    class="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 place-items-center"
+  >
     <Card
       title="ThreeJs Lander"
-      description="A simple lunar lander game built with three.js. The player controls a spaceship and must navigate it to a safe landing on the moon's surface."
-      photo="/threejs/lander.png"
-      alt="A screenshot of the three.js lander game, showing a spaceship hovering above a moon-like surface with craters and rocks."
+      description="A first look at what can be done with three js."
+      photo={ThreejsPhoto}
+      alt="Picture of the threejs logo."
+      route="/threejs/firstlook"
+    />
+    <Card
+      title="ThreeJs Lander"
+      description="A first look at what can be done with three js."
+      photo={ThreejsPhoto}
+      alt="Picture of the threejs logo."
+      route="/threejs/firstlook"
+    />
+    <Card
+      title="ThreeJs Lander"
+      description="A first look at what can be done with three js."
+      photo={ThreejsPhoto}
+      alt="Picture of the threejs logo."
+      route="/threejs/firstlook"
+    />
+    <Card
+      title="ThreeJs Lander"
+      description="A first look at what can be done with three js."
+      photo={ThreejsPhoto}
+      alt="Picture of the threejs logo."
+      route="/threejs/firstlook"
+    />
+    <Card
+      title="ThreeJs Lander"
+      description="A first look at what can be done with three js."
+      photo={ThreejsPhoto}
+      alt="Picture of the threejs logo."
+      route="/threejs/firstlook"
     />
   </div>
 </div>

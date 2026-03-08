@@ -1,5 +1,7 @@
 ---
-const { title, description, photo, alt } = Astro.props;
+import { Image } from "astro:assets";
+
+const { title, description, photo, alt, route } = Astro.props;
 ---
 
 <!-- title and description are self explanatory
@@ -7,14 +9,16 @@ const { title, description, photo, alt } = Astro.props;
      on the card, and alt is the alt text for 
      the image
 -->
-<div class="card bg-base-100 w-96 border-2 border-base-200 shadow-2xl">
-  <div class="card-body">
-    <h2 class="card-title">{title}</h2>
-    <p>
-      {description}
-    </p>
-  </div>
-  <figure>
-    <img src={photo} alt={alt} />
-  </figure>
+<div class="card bg-base-100 w-96 border-2 border-base-200 shadow-2xl m-5">
+  <a href={route}>
+    <div class="card-body">
+      <h2 class="card-title">{title}</h2>
+      <p>
+        {description}
+      </p>
+    </div>
+    <figure>
+      <Image src={photo} alt={alt} />
+    </figure>
+  </a>
 </div>
