@@ -1,6 +1,6 @@
 ---
-import Logo from "../assets/logo.jpeg";
-//import background from "../assets/background.svg";
+import { Image } from "astro:assets";
+import Logo from "../assets/pfp.png";
 import "../styles/global.css";
 ---
 
@@ -14,26 +14,18 @@ import "../styles/global.css";
 <div class="h-[75%] grid-cols-2 gap-3">
   <div class="hero">
     <div class="hero-content flex-col lg:flex-row">
-      <img
-        src={Logo.src}
+      <Image
+        src={Logo}
         alt="Personal logo looks like a fish swimming in a galaxy"
         class="max-w-sm rounded-2xl shadow-2xl"
       />
       <div>
-        <h1 class="text-5xl font-bold">melloCoding</h1>
-        <p class="py-6">
+        <h1 class="title-primary">melloCoding</h1>
+        <p class="py-6 text-center">
           Beginner Full Stack web developer, game designer, and really bad
           artist.
         </p>
-        <button class="btn btn-primary">Get Started</button>
       </div>
     </div>
   </div>
-
-  <!-- <ul class="menu bg-base-200 rounded-box h-[50%] overflow-y-auto mx-[5%]">
-    <li class="menu-title">Title</li>
-    <li><a>Item 1</a></li>
-    <li><a>Item 2</a></li>
-    <li><a>Item 3</a></li>
-  </ul> -->
 </div>

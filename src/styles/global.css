@@ -1,4 +1,27 @@
 @import "tailwindcss";
-@plugin "daisyui"{
-   themes: business --default, light; 
+@tailwind utilities;
+@plugin "daisyui" {
+  themes:
+    business --default,
+    light;
+}
+@layer base {
+  ::selection {
+    background-color: theme("colors.stone.300/0.5");
+    color: theme("colors.stone.300/0.5");
+  }
+}
+
+@layer components {
+  .title-primary {
+    @apply text-6xl font-bold text-center pb-3;
+  }
+
+  .title-secondary {
+    @apply text-4xl font-bold text-center pb-3;
+  }
+
+  .body-primary {
+    @apply text-lg text-center sm:px-[10%] lg:px-[15%] xl:px-[20%] 2xl:px-[30%];
+  }
 }

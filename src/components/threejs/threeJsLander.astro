@@ -1,0 +1,24 @@
+---
+import SecondaryTitle from "../../components/reusable/secondaryTitle.astro";
+import Card from "../../components/reusable/card.astro";
+---
+
+<div>
+  <h1 class="title-primary">ThreeJs</h1>
+  <p class="body-primary pb-5">
+    I've wanted to work on learning three.js for a while now, and i've decided
+    to make a simple web game using it because I figured what better way to
+    learn than to just jump in and start building something. I'm likely going to
+    be starting with some simple example just to ge a feel for three.js.
+  </p>
+  <SecondaryTitle title="ThreeJs Projects" />
+  <!-- Uses the card component to show all of the available projects -->
+  <div class="flex flex-col columns-4 w-full mx-40">
+    <Card
+      title="ThreeJs Lander"
+      description="A simple lunar lander game built with three.js. The player controls a spaceship and must navigate it to a safe landing on the moon's surface."
+      photo="/threejs/lander.png"
+      alt="A screenshot of the three.js lander game, showing a spaceship hovering above a moon-like surface with craters and rocks."
+    />
+  </div>
+</div>
