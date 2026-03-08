@@ -1,10 +1,21 @@
-<!-- Top Navbar -->
+<!-- Top Navbar 
+ This is the navbar show when the screen is medium or larger. It is hidden on smaller screens, and the bottom navbar is shown instead.
+-->
 <div
   class="hidden md:inline-flex navbar nav fixed top-0 bg-base-100 border-2 shadow-2xl border-base-200 justify-content justify-center w-[95%] left-0 right-0 ml-[2.5%] mt-[1%] rounded-3xl"
 >
   <div class="flex-1 inline-flex">
     <a href="/" class="btn btn-ghost text-xl">Jeffrey Mello</a>
   </div>
+  <!-- Link to blog -->
+  <a href="https://blog.mellocoding.com" aria-label="link to my blog site">
+    <div class="flex-none btn btn-ghost text-lg">Blog</div>
+  </a>
+
+  <a href="/threejs/threejs" aria-label="link to my threejs test page">
+    <div class="flex-none btn btn-ghost text-lg">ThreeJs Test</div>
+  </a>
+
   <div class="btn btn-ghost">
     <label class="swap swap-rotate scale-75">
       <!-- this hidden checkbox controls the state -->
@@ -36,20 +47,11 @@
       </svg>
     </label>
   </div>
-  <!-- <a href="/gamedev">
-    <div class="flex-none btn btn-ghost text-lg">Devlog</div>
-  </a>
-
-  <a href="/robotics">
-    <div class="flex-none btn btn-ghost text-lg">Robotics</div>
-  </a>
- -->
-  <a href="https://blog.mellocoding.com" aria-label="link to my blog site">
-    <div class="flex-none btn btn-ghost text-lg">Blog</div>
-  </a>
 </div>
 
-<!-- Bottom Navbar -->
+<!-- Bottom Navbar 
+This navbar is only shown when the screen is small 
+-->
 <div
   class="inline-flex md:hidden dock w-[95%] ml-[2.5%] mb-[2.5%] rounded-3xl border-2 border-base-200 shadow-2xl"
 >
@@ -158,6 +160,12 @@
         <!-- <li><a href="/devlog">Devlog</a></li>
         <li><a href="/robotics">Robotics</a></li> -->
         <li><a href="https://blog.mellocoding.com">Blog</a></li>
+        <li>
+          <!-- Link the the threejs site -->
+          <a href="/threejs/threejs" aria-label="link to my threejs test page">
+            <div class="">ThreeJs Test</div>
+          </a>
+        </li>
       </ul>
     </div>
     <!-- <span class="dock-label">Settings</span> -->
