@@ -1,6 +1,15 @@
 ---
-import Navbar from "../components/reusable/navbar.astro";
+import Navbar from "../components/reusable/autogenNavbar.astro";
 import BlobBG from "../components/reusable/blobBG.astro";
+
+const navLinks = [
+  { name: "three.js", href: "/threejs/", ariaLabel: "link to my threejs page" },
+  {
+    name: "Blog",
+    href: "https://blog.mellocoding.com",
+    ariaLabel: "link to my blog",
+  },
+];
 ---
 
 <!doctype html>
@@ -12,45 +21,6 @@ import BlobBG from "../components/reusable/blobBG.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Jeffrey Mello</title>
 
-    <script is:inline>
-      // Prevent FART (Flash of inAccurate coloR Theme)
-      const theme = localStorage.getItem("theme") ?? "business";
-      document.documentElement.setAttribute("data-theme", theme);
-    </script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const desktopCheckbox = document.getElementById(
-          "theme-checkbox",
-        ) as HTMLInputElement;
-        const mobileCheckbox = document.getElementById(
-          "theme-checkbox-mobile",
-        ) as HTMLInputElement;
-
-        function updateCheckboxes(theme: string) {
-          const isLight = theme === "light";
-          if (desktopCheckbox) desktopCheckbox.checked = isLight;
-          if (mobileCheckbox) mobileCheckbox.checked = isLight;
-          document.documentElement.setAttribute("data-theme", theme);
-          localStorage.setItem("theme", theme);
-        }
-
-        // Set initial states
-        const savedTheme = localStorage.getItem("theme") ?? "business";
-        updateCheckboxes(savedTheme);
-
-        // Add event listeners for both checkboxes
-        desktopCheckbox?.addEventListener("change", () => {
-          const theme = desktopCheckbox.checked ? "light" : "business";
-          updateCheckboxes(theme);
-        });
-
-        mobileCheckbox?.addEventListener("change", () => {
-          const theme = mobileCheckbox.checked ? "light" : "business";
-          updateCheckboxes(theme);
-        });
-      });
-    </script>
     <meta charset="utf-8" />
     <title>
       The website one the one and only Jeffrey Mello (aka melloCoding)
@@ -58,8 +28,10 @@ import BlobBG from "../components/reusable/blobBG.astro";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body class="pt-5 md:pt-[10em]">
+    <!-- Display the blob background -->
     <BlobBG />
-    <Navbar />
+    <!-- Display the navbar -->
+    <Navbar links={navLinks} />
     <slot />
   </body>
 </html>
@@ -72,3 +44,43 @@ import BlobBG from "../components/reusable/blobBG.astro";
     height: 100%;
   }
 </style>
+
+<script is:inline>
+  // Prevent FART (Flash of inAccurate coloR Theme)
+  const theme = localStorage.getItem("theme") ?? "business";
+  document.documentElement.setAttribute("data-theme", theme);
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const desktopCheckbox = document.getElementById(
+      "theme-checkbox",
+    ) as HTMLInputElement;
+    const mobileCheckbox = document.getElementById(
+      "theme-checkbox-mobile",
+    ) as HTMLInputElement;
+
+    function updateCheckboxes(theme: string) {
+      const isLight = theme === "light";
+      if (desktopCheckbox) desktopCheckbox.checked = isLight;
+      if (mobileCheckbox) mobileCheckbox.checked = isLight;
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+    }
+
+    // Set initial states
+    const savedTheme = localStorage.getItem("theme") ?? "business";
+    updateCheckboxes(savedTheme);
+
+    // Add event listeners for both checkboxes
+    desktopCheckbox?.addEventListener("change", () => {
+      const theme = desktopCheckbox.checked ? "light" : "business";
+      updateCheckboxes(theme);
+    });
+
+    mobileCheckbox?.addEventListener("change", () => {
+      const theme = mobileCheckbox.checked ? "light" : "business";
+      updateCheckboxes(theme);
+    });
+  });
+</script>
