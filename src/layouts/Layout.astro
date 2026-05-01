@@ -3,12 +3,12 @@ import Navbar from "../components/reusable/autogenNavbar.astro";
 import BlobBG from "../components/reusable/blobBG.astro";
 
 const navLinks = [
-  { name: "three.js", href: "/threejs/", ariaLabel: "link to my threejs page" },
   {
     name: "Blog",
     href: "https://blog.mellocoding.com",
     ariaLabel: "link to my blog",
   },
+  { name: "Blog-md", href: "/blog", ariaLabel: "link to my blog" },
 ];
 ---
 
@@ -27,7 +27,7 @@ const navLinks = [
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body class="pt-5 md:pt-[10em]">
+  <body class="pt-5 h-[100%] md:pt-[10em] pb-20 md:pb-0">
     <!-- Display the blob background -->
     <BlobBG />
     <!-- Display the navbar -->

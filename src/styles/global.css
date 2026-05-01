@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @tailwind utilities;
+@plugin "@tailwindcss/typography";
 @plugin "daisyui" {
   themes:
     business --default,

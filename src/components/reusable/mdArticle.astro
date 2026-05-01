@@ -1,0 +1,17 @@
+---
+let { filename } = Astro.props;
+
+const articles = import.meta.glob<{ Content: any }>(
+  "../../assets/articles/*.md",
+  { eager: true },
+);
+
+const articleKey = `../../assets/articles/${filename}.md`;
+const article = articles[articleKey];
+
+const { Content: ArticleContent } = article;
+---
+
+<article class="prose prose-lg ml-[10%] mr-[10%] w-[80%]">
+  <ArticleContent />
+</article>
