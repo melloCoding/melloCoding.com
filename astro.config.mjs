@@ -10,4 +10,7 @@ export default defineConfig({
   },
 
   integrations: [vue()],
+  build: {
+    inlineStylesheets: "always",
+  },
 });
