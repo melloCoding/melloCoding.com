@@ -9,9 +9,12 @@ const articles = import.meta.glob<{ Content: any }>(
 const articleKey = `../../assets/articles/${filename}.md`;
 const article = articles[articleKey];
 
+// Get the html content of the markdown file using astro Content component
 const { Content: ArticleContent } = article;
 ---
 
-<article class="prose prose-lg ml-[10%] mr-[10%] w-[80%]">
-  <ArticleContent />
-</article>
+<div class="justify-center">
+  <article class="prose prose-lg px-5 sm:px-5 md:px-20 2xl:px-60 max-w-none">
+    <ArticleContent />
+  </article>
+</div>
