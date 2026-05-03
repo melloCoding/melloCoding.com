@@ -1,20 +1,30 @@
 ---
+// Allow passing a filename prop to specify which markdown file to load
 let { filename } = Astro.props;
 
+// Import all markdown files in the articles directory
 const articles = import.meta.glob<{ Content: any }>(
-  "../../assets/articles/*.md",
+  "../../assets/articles/**/*.mdx",
   { eager: true },
 );
+// Construct the key to access the correct markdown file
+const articleKey = `../../assets/articles/${filename}.mdx`;
 
-const articleKey = `../../assets/articles/${filename}.md`;
+// Get the article content based on the filename prop
 const article = articles[articleKey];
-
 // Get the html content of the markdown file using astro Content component
 const { Content: ArticleContent } = article;
 ---
 
+<!-- Center the article -->
 <div class="justify-center">
-  <article class="prose prose-lg px-5 sm:px-5 md:px-20 2xl:px-60 max-w-none">
+  <!-- Use tailwind typography to style the article -->
+  <article
+    class="prose prose-lg px-5 sm:px-5 md:px-20 lg:px-50 xl:px-75 2xl:px-175 max-w-none"
+  >
+    <!-- The slot allows for images to be used before the article content -->
+    <slot />
+    <!-- Render markdown to html -->
     <ArticleContent />
   </article>
 </div>
