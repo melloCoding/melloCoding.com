@@ -1,4 +1,7 @@
 ---
+// pre-render page to avoid fighting with cloudflare
+export const prerender = true;
+
 // Allow passing a filename prop to specify which markdown file to load
 let { filename } = Astro.props;
 
