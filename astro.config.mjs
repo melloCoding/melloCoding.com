@@ -15,5 +15,7 @@ export default defineConfig({
 
   integrations: [vue(), mdx()],
   output: "server",
-  adapter: cloudflare({ imageService: "cloudflare-binding" }),
+  adapter: cloudflare({
+    imageService: "passthrough",
+  }),
 });
