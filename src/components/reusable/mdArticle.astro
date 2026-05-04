@@ -1,20 +1,22 @@
 ---
 // pre-render page to avoid fighting with cloudflare
 export const prerender = true;
-
-// Allow passing a filename prop to specify which markdown file to load
-let { filename } = Astro.props;
-
+import BlogTitle from "./blogTitle.astro";
 // Import all markdown files in the articles directory
 const articles = import.meta.glob<{ Content: any }>(
   "../../assets/articles/**/*.mdx",
   { eager: true },
 );
+const { title, author, date } = Astro.props;
+// Allow passing a filename prop to specify which markdown file to load
+let { filename } = Astro.props;
 // Construct the key to access the correct markdown file
 const articleKey = `../../assets/articles/${filename}.mdx`;
-
 // Get the article content based on the filename prop
 const article = articles[articleKey];
+if (!article) {
+  throw new Error(`Article not found: ${articleKey}`);
+}
 // Get the html content of the markdown file using astro Content component
 const { Content: ArticleContent } = article;
 ---
@@ -25,6 +27,8 @@ const { Content: ArticleContent } = article;
   <article
     class="prose prose-lg px-5 sm:px-5 md:px-20 lg:px-50 xl:px-75 2xl:px-175 max-w-none"
   >
+    <!-- Render the blog title component with the frontmatter data -->
+    <BlogTitle title={title} author={author} date={date} />
     <!-- The slot allows for images to be used before the article content -->
     <slot />
     <!-- Render markdown to html -->

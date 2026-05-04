@@ -5,26 +5,24 @@ import BlobBG from "../components/reusable/blobBG.astro";
 const navLinks = [
   { name: "Blog", href: "/blog", ariaLabel: "link to my blog" },
 ];
+// Set default title and description if not provided via props so that I can change them on a per page basis if needed
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <title>{title || "Jeffrey Mello"}</title>
     <meta
       name="description"
-      content="The personal site and blog of Jeffrey Mello"
+      content={description || "The personal site and blog of Jeffrey Mello"}
     />
-    <link rel="icon" type="image/svg+xml" href="/websiteicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <title>Jeffrey Mello</title>
+    <link rel="icon" type="image/svg+xml" href="/websiteicon.svg" />
 
     <meta charset="utf-8" />
-    <title>
-      The website one the one and only Jeffrey Mello (aka melloCoding)
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body class="pt-5 h-[100%] md:pt-[10em] pb-20 md:pb-0">
     <!-- Display the blob background -->

@@ -2,8 +2,19 @@
 import Layout from "../../../layouts/Layout.astro";
 import MdArticle from "../../../components/reusable/mdArticle.astro";
 import "../../../styles/global.css";
+
+const title = "openHitbox";
+const description =
+  "Overall description of the openHitbox project, its goals, and its development process.";
+const author = "Jeffrey Mello";
+const date = "5-3-2026";
 ---
 
-<Layout>
-  <MdArticle filename="openHitbox/openHitboxHome" />
+<Layout title={title} description={description}>
+  <MdArticle
+    title={title}
+    author={author}
+    date={date}
+    filename="openHitbox/openHitboxHome"
+  />
 </Layout>

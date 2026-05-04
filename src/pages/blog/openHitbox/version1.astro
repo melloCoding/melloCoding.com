@@ -1,14 +1,24 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-
 import MdArticle from "../../../components/reusable/mdArticle.astro";
 import "../../../styles/global.css";
 import { Image } from "astro:assets";
 import hitboxV1 from "../../../assets/articles/openHitbox/images/hitbox_v1.png";
+
+const title = "openHitbox Version 1.0";
+const description =
+  "The first version of openHitbox and a look into its development";
+const author = "Jeffrey Mello";
+const date = "5-3-2026";
 ---
 
-<Layout>
-  <MdArticle filename="openHitbox/version1">
+<Layout title={title} description={description}>
+  <MdArticle
+    filename="openHitbox/version1"
+    title={title}
+    author={author}
+    date={date}
+  >
     <Image src={hitboxV1} alt="openHitbox Version 1.0" />
   </MdArticle>
 </Layout>

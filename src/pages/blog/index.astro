@@ -2,8 +2,13 @@
 import Layout from "../../layouts/Layout.astro";
 import MdArticle from "../../components/reusable/mdArticle.astro";
 import "../../styles/global.css";
+const title = "Blog Home";
+const description =
+  "The home page of the blog section of melloCoding.com, where all blog posts are listed and linked to.";
+const author = "Jeffrey Mello";
+const date = "5-3-2026";
 ---
 
-<Layout>
-  <MdArticle filename="blogHome" />
+<Layout title={title} description={description}>
+  <MdArticle title={title} author={author} date={date} filename="blogHome" />
 </Layout>
